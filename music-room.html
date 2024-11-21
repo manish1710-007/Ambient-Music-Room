@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ambient Music Room</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-image: url('bgs/campfire-bg.gif');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #fff;
+    }
+    .music-room {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="track">
+    <button class="play-button">
+      <div class="track-icon"></div>
+      Track Name
+    </button>
+    <input type="range" class="volume-slider" min="0" max="100" value="50">
+  </div>
+  <div class="music-room">
+    <h1>Ambient Music Room</h1>
+    <div class="buttons-container">
+      <!-- Loop through 10 tracks -->
+      <div class="track" id="track1">
+        <button class="play-button" onclick="togglePlay('track1Audio')">Play</button>
+            <img src="icons/icon1-rain.png" alt="Track 1 Icon" class="track-icon">
+        <input type="range" min="0" max="1" step="0.01" value="0" class="volume-slider" onchange="adjustVolume('track1Audio', this.value)">
+        <audio id="track1Audio" src="audio/ambient1-rain.mp3" loop></audio>
+      </div>
+      <div class="track" id="track2">
+        <button class="play-button" onclick="togglePlay('track2Audio')">Play</button>
+            <img src="icons/icon2-heavyrain.png" alt="Track 2 Icon" class="track-icon">
+        <input type="range" min="0" max="1" step="0.01" value="0" class="volume-slider" onchange="adjustVolume('track2Audio', this.value)">
+        <audio id="track2Audio" src="audio/ambient2-heavyrain.mp3" loop></audio>
+      </div>
+      <div class="track" id="track3">
+        <button class="play-button" onclick="togglePlay('track3Audio')">Play</button>
+           <img src="icons/icon3-thunderstrom.png" alt="Track 3 Icon" class="track-icon">
+        <input type="range" min="0" max="1" step="0.01" value="0" class="volume-slider" onchange="adjustVolume('track3Audio', this.value)">
+        <audio id="track3Audio" src="audio/ambient3-thunderstrom.mp3" loop></audio>
+      </div>
+      <div class="track" id="track4">
+        <button class="play-button" onclick="togglePlay('track4Audio')">Play</button>
+            <img src="icons/icon4-citynoise.png" alt="Track 4 Icon" class="track-icon">
+        <input type="range" min="0" max="1" step="0.01" value="0" class="volume-slider" onchange="adjustVolume('track4Audio', this.value)">
+        <audio id="track4Audio" src="audio/ambient4-citynoise.mp3" loop></audio>
+      </div>
+      <div class="track" id="track5">
+        <button class="play-button" onclick="togglePlay('track5Audio')">Play</button>
+            <img src="icons/icon5-wind.png" alt="Track 5 Icon" class="track-icon">
+        <input type="range" min="0" max="1" step="0.01" value="0" class="volume-slider" onchange="adjustVolume('track5Audio', this.value)">
+        <audio id="track5Audio" src="audio/ambient5-wind.mp3" loop></audio>
+      </div>
+      <div class="track" id="track6">
+        <button class="play-button" onclick="togglePlay('track6Audio')">Play</button>
+            <img src="icons/icon6-coffeeshop.png" alt="Track 6 Icon" class="track-icon">
+        <input type="range" min="0" max="1" step="0.01" value="0" class="volume-slider" onchange="adjustVolume('track6Audio', this.value)">
+        <audio id="track6Audio" src="audio/ambient6-coffeeshop.mp3" loop></audio>
+      </div>
+      <div class="track" id="track7">
+        <button class="play-button" onclick="togglePlay('track7Audio')">Play</button>
+            <img src="icons/icon7-waves.png" alt="Track 7 Icon" class="track-icon">
+        <input type="range" min="0" max="1" step="0.01" value="0" class="volume-slider" onchange="adjustVolume('track7Audio', this.value)">
+        <audio id="track7Audio" src="audio/ambient7-waves.mp3" loop></audio>
+      </div>
+      <div class="track" id="track8">
+        <button class="play-button" onclick="togglePlay('track8Audio')">Play</button>
+            <img src="icons/icon8-campfire.png" alt="Track 8 Icon" class="track-icon">
+        <input type="range" min="0" max="1" step="0.01" value="0" class="volume-slider" onchange="adjustVolume('track8Audio', this.value)">
+        <audio id="track8Audio" src="audio/ambient8-campfire.mp3" loop></audio>
+      </div>
+      <div class="track" id="track9">
+        <button class="play-button" onclick="togglePlay('track9Audio')">Play</button>
+            <img src="icons/icon9-nature.png" alt="Track 9 Icon" class="track-icon">
+        <input type="range" min="0" max="1" step="0.01" value="0" class="volume-slider" onchange="adjustVolume('track9Audio', this.value)">
+        <audio id="track9Audio" src="audio/ambient9-nature.mp3" loop></audio>
+      </div>
+      <div class="track" id="track10">
+        <button class="play-button" onclick="togglePlay('track10Audio')">Play</button>
+            <img src="icons/icon10-fireworks.png" alt="Track 10 Icon" class="track-icon">
+        <input type="range" min="0" max="1" step="0.01" value="0" class="volume-slider" onchange="adjustVolume('track10Audio', this.value)">
+        <audio id="track10Audio" src="audio/ambient10-fireworks.mp3" loop></audio> 
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

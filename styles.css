@@ -1,0 +1,192 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #1a1a1a;
+  color: #500af5;
+  text-align: center;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.music-room {
+  position: relative;
+  padding: 40px 20px;
+  border-radius: 10px;
+  background: rgba(80, 10, 245, 0.05);
+  box-shadow: 0 5px 15px rgba(248, 246, 246, 0.5);
+  color: rgb(242, 239, 243);
+  max-width: 1200px;
+  margin: 20px auto;
+  min-height: calc(100vh - 40px);
+}
+
+.buttons-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 20px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.track:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(80, 10, 245, 0.3);
+}
+
+.play-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgb(244, 247, 248);
+  font-size: 16px;
+  padding: 10px;
+  position: relative;
+}
+
+.track-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+  background: #500af5;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.track-icon::before {
+  content: '▶';
+  color: white;
+  font-size: 20px;
+}
+
+.track-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 
+    0 0 10px rgba(80, 10, 245, 0.5),
+    0 0 20px rgba(80, 10, 245, 0.3),
+    0 0 30px rgba(80, 10, 245, 0.2);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px rgba(80, 10, 245, 0.5);
+  }
+  50% {
+    box-shadow: 
+      0 0 20px rgba(80, 10, 245, 0.5),
+      0 0 30px rgba(80, 10, 245, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(80, 10, 245, 0.5);
+  }
+}
+
+.volume-slider {
+  margin-top: 10px;
+  width: 100px;
+  -webkit-appearance: none;
+  height: 4px;
+  background: rgba(80, 10, 245, 0.3);
+  border-radius: 2px;
+  outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #500af5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(80, 10, 245, 0.5);
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px rgba(80, 10, 245, 0.7);
+}
+
+/* Firefox styles for volume slider */
+.volume-slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border: none;
+  border-radius: 50%;
+  background: #500af5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(80, 10, 245, 0.5);
+}
+
+.volume-slider::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px rgba(80, 10, 245, 0.7);
+}
+
+/* Responsive layout */
+@media (max-width: 1200px) {
+  .buttons-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .buttons-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .music-room {
+    margin: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .buttons-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .music-room {
+    padding: 20px 10px;
+  }
+  
+  .track {
+    padding: 15px;
+  }
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(190, 72, 214, 0.5);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(190, 72, 214, 0.8);
+}
